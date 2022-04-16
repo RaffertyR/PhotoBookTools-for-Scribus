@@ -10,6 +10,8 @@ Summary of workflow:
 5) Edit caption texts (if you have created them in step 1).
 6) Export your photo book to pdf or other formats.
 
+A little demo video on Youtube: https://www.youtube.com/watch?v=3bcF4KhCCJg
+
 For Scribus 1.5.6 and higher (needs Python 3; tested in Windows 10 and Linux).
 
 ![PhotoBookTools.jpg](https://raw.githubusercontent.com/RaffertyR/PhotoBookTools-for-Scribus/main/PhotoBookTools.jpg)
