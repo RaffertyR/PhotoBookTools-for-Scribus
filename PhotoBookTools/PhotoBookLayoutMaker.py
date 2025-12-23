@@ -114,7 +114,7 @@ class ScPhotoBookLayoutMaker:
             for i in range (0, nbrSelected):
                 obj = getSelectedObject(i)
                 selectionList.append(obj)
-                if (getProperty(obj, 'itemType')) == 12:
+                if getObjectType(obj) == 'Group':
                     messageBox('Warning', 'Grouped items are not allowed as source.\nPlease ungroup "'
                         +obj+'" and try again.', ICON_CRITICAL)
                     sys.exit(1)

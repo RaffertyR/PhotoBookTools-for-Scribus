@@ -85,7 +85,7 @@ class ScPhotoBookImageCropResize:
             newHeight = int(frameSizeY * imageResolution)
             scribus.setUnit(UNIT_POINTS)
 
-            # Calculate cropping        
+            # Calculate cropping
             imageXOffset = scribus.getProperty(imageFrame,'imageXOffset')
             imageYOffset = scribus.getProperty(imageFrame,'imageYOffset')
             frameSizeX,frameSizeY = scribus.getSize(imageFrame)
@@ -165,10 +165,11 @@ class ScPhotoBookImageCropResize:
                 scribus.progressSet(i)
                 obj = getSelectedObject(i)
                 selectionList.append(obj)
-                if (getProperty(obj, 'itemType')) == 12:
+                objectType = getObjectType(obj)
+                if objectType == 'Group':
                     messageBox('Warning', 'Grouped items will be skipped.\nPlease ungroup "'
                         +obj+'" and try again.', ICON_WARNING)
-                elif (getObjectType(obj) == 'ImageFrame') and (getImageFile(obj) != ""):
+                elif (objectType == 'ImageFrame') and (getImageFile(obj) != ""):
                     self.handleImage(obj)
                 else: # not an image frame -> skip
                     pass
